@@ -88,7 +88,8 @@ function showTemperature(response) {
 }
 // Search
 
-function cityLocation(){
+function cityLocation(event){
+  event.preventDefault()
   const cityInputTag = document.querySelector("#type-city")
   const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInputTag.value}&appid=${apiKey}&units=metric`
   axios.get(apiUrl).then(showTemperature)
